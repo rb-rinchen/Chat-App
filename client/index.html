@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatNest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+    <div id="chatForm-container">
+        <div class="chatform-logo">
+            <img src="https://freepngimg.com/thumb/one_piece/119102-luffy-free-download-png-hd.png" alt="logo">
+        </div>
+        <div class="heading-text">
+            <h4>Hello User !Welcome <br>Fill Everything</h4>
+         </div>
+        <form class="chat-form" onsubmit="submitForm(event)">
+            <label for="chat-main">Name</label>
+            <input type="text" id="chat-main" class="chat-input" placeholder="Enter your name" required>
+            <label for="chat-sub">Room ID</label>
+            <input type="text" id="chat-sub" class="room-input" placeholder="Enter the room id" required>
+            <label for="profile-pic">Upload a profile pic</label>
+            <input type="file" accept="image/*" id="profile-pic"  value="upload a profile pic">
+            <button type="submit" class="btn btn-form" >Enter the chat</button>
+        </form>
+    </div>
+   <!-- from here chat ui starts-->
+    <div class="chatbox-container">
+        <div class="chat-info">
+            <h1>Welcome to the Chat Room!</h1>
+            <p>Hello and welcome! 🎉 We're thrilled to have you here. This is a vibrant space where you can connect, share, and chat with friends. Whether you're catching up or starting new conversations, feel free to express yourself and enjoy the friendly atmosphere. Dive in, say hi, and make the most of your time here! Happy chatting! 💬</p>
+        </div>
+        <div class="chatbox-left">
+            <div class="chatbox-inbox scrollbar">
+              
+            </div>
+            <div class="chatbox-write">
+                <form onsubmit="sendMessage(event)" class="chatbox-inputs">
+                    <input type="text" class="chatbox-input " required>
+                    <button type="submit" class="btn-send">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="chatbox-right">
+            <div class="chatbox-notify">
+            </div>
+            <div class="chatbox-users scrollbar">
+                <h3>Online</h3>
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
