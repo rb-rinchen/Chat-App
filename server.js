@@ -11,6 +11,9 @@ import path from "path";
 
 const app=express();
 app.use(express.static(path.join(path.resolve("client","public"))));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(path.resolve("client","public","index.html")));
+});
 const server=http.createServer(app);
 app.use(cors());
 const io=new Server(server,{
